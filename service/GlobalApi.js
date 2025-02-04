@@ -2,9 +2,9 @@ import { Content } from "@radix-ui/react-dialog";
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_STRAPI_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL.replace(/\/$/, "");
+
 const axiosClient = axios.create({
-  baseURL: `${BASE_URL}/api/`,
+  baseURL: import.meta.env.VITE_BASE_URL + "/api/",
   headers: { // Note: headers is in lowercase
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${API_KEY}`, // Add a space between 'Bearer' and the API key
